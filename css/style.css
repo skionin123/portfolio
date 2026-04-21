@@ -236,56 +236,60 @@ img {
     .name {
         font-size: 26px;
     }
-}/* ===== ABOUT SECTION CLEAN FIX ===== */
+}
+
+/* ===== ABOUT SECTION FINAL FIX ===== */
 
 .two-column-container {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 /* IMAGE */
 .image-left {
     flex: 1;
-    min-width: 280px;
-    height: 350px;
+    max-width: 320px;
+    height: 380px;
     background-image: url(../images/Graduation\ Pic.png);
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 12px;
+    filter: grayscale(100%);
 }
 
 /* CONTENT */
 .content-right {
     flex: 2;
-    min-width: 300px;
+    max-width: 600px;
 }
 
-/* NAME */
+/* NAME (FIX VISIBILITY) */
 .name {
     color: #ffffff;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 700;
     margin-bottom: 10px;
-    font-weight: 600;
 }
 
-/* TITLE */
+/* TITLE (LESS HARSH RED) */
 .web-title {
-    color: #6ccff6;
-    font-size: 18px;
+    color: #ff4d4d;
+    font-size: 20px;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
-/* TEXT */
+/* PARAGRAPH */
 .container-par p {
     margin-bottom: 15px;
     line-height: 1.7;
-    color: #BEC7D5;
+    color: #d1d5db;
 }
 
-/* SUMMARY GRID */
+/* SUMMARY */
 .summary-detail {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -295,17 +299,22 @@ img {
 
 .summary-detail span {
     font-size: 14px;
-    color: #ccc;
+    color: #d1d5db;
 }
 
 .summary-detail i {
-    color: #6ccff6;
-    margin-right: 5px;
+    color: #ff4d4d;
+    margin-right: 6px;
 }
 
 /* WHAT I DO */
 .what-i-do {
     margin-top: 25px;
+}
+
+.what-i-do p {
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .what-i-do ul {
@@ -314,34 +323,22 @@ img {
 
 .what-i-do li {
     margin-bottom: 8px;
-    color: #ffffff;
-}
-
-/* FLEX ITEMS CLEANER LOOK */
-.flex-container div {
-    text-align: center;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-.flex-container div:hover {
-    transform: translateY(-3px);
-    background-color: #6ccff6;
-    color: #003049;
+    color: #e5e7eb;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .two-column-container {
         flex-direction: column;
+        text-align: center;
     }
 
     .summary-detail {
         grid-template-columns: 1fr;
     }
 
-    .name {
-        font-size: 26px;
+    .image-left {
+        margin-bottom: 20px;
     }
 }
 
