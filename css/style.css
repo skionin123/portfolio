@@ -129,362 +129,220 @@ img {
     width: 800px;
     opacity: 0.7;
 }
-/* about */
-.fullname-container div {
-    display: block;
-    width: 100%;
-}
-.fullname{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400px;
-    color: rgb(240, 240, 240);
-    font-size: 30px;
-    line-height: 42px;
-    font-weight:  600;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000;
-    height: 70px;
-    padding: 0px 8%;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    transition: 0.3s;
-    z-index: 9999;
-    
-}
-header a{
-    text-decoration: none;
-    color: rgb(240, 240, 240);
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 30px;
-    display: flex;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 50px;
-    
-}
-.navbar-hide {
-    display: none;
-}
+/* ===== ABOUT SECTION CLEAN FIX ===== */
 
-.black-bar {
-    height: auto;
-    width: 60%;
-    background-color: rgb(1, 1, 1, 0.7);
-    margin-left: auto;
-    margin-right: auto;
-}
-.port-bar {
-    height: 60vh;
-    width: 60%;
-    background-color: rgb(1, 1, 1, 0.7);
-    margin-left: auto;
-    margin-right: auto;
-}
-.title {
-    color: white;
-}
-.line{
-    height: 3px;
-    width: 90px;
-    margin: 10px;
-    background-color: #CF2D1E;
-}
-.container-title{
-    display: flex;
-    padding: 40px 10px 0px 20px;
-}
-.resumepdf {
-    background-color: #CF2D1E;
-    color: WHITE;
-    border-radius: 10px;
-    padding: 5px 5px;
-    border: solid 1px white;
-}
-.title-2 {
-    font-size: 35px;
-    padding-left: 20px;
-    color: white;
-    font-weight: 500;
-}
-.education {
-    font-size: 35px;
-    padding-top: 20px;
-    padding-left: 10px;
-    color: white;
-    font-weight: 500;
-}
-.course {
-    color: #CF2D1E;
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 50px;
-}
-.year {
-    color: #BEC7D5;
-    background-color: #2D2D2D96;
-    height: 40px;
-    width: 110px;
-    padding-left: 16px;
-    padding-top: 8px;
-    font-size: 15px;
-    margin-left: 4rem;
-}
-.school-bullet {
-    font-size: 15px;
-    margin-left: 5rem;
-    margin-top: 2rem;
-    color: #BEC7D5;
-}
-.web-design {
-    color: #CF2D1E;
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 50px;
-    padding-top: 40px;
-}
-.web-bullet {
-    font-size: 15px;
-    margin-left: 5rem;
-    margin-top: 2rem;
-    color: #BEC7D5;
-}
-.line-vertical {
-    height: 120px;
-    width: 4px;
-    background-color: #5d5d5d96;
-    margin-top: -140px;
-    margin-left: 27px;
-}
-.circle {
-    height: 25px;
-    width: 25px;
-    background-color: #f34235;
-    border-radius: 50px;
-    margin-top: -135px;
-    margin-left: 19px;
-}
-.year-2 {
-    color: #BEC7D5;
-    background-color: #2D2D2D96;
-    height: 40px;
-    width: 110px;
-    padding-left: 16px;
-    padding-top: 8px;
-    font-size: 15px;
-    margin-left: 10rem;
-}
-.para-resume {
-    margin-left: 10.5rem;
-    font-size: 15px;
-}
-.para-resume-2 {
-    margin-left: 10.5rem;
-    font-size: 15px;
-}
-.shape-website {
-    color: rgb(214, 72, 72);
-    margin-left: 70px;
-}
-.shape-website:hover {
-    color: white;
-}
-.email-experience {
-    margin-left: 9rem;
-    color: #CF2D1E;
-    font-size: 20px;
-    font-weight: 500;
-}
 .two-column-container {
     display: flex;
-    flex-direction: row;
+    gap: 30px;
+    align-items: center;
     flex-wrap: wrap;
-  }
-  
+}
+
+/* IMAGE */
 .image-left {
-    width: 38%;
-    height: 45vh;
-    margin: 5px;
-    padding: 5px;
+    flex: 1;
+    min-width: 280px;
+    height: 350px;
     background-image: url(../images/Graduation\ Pic.png);
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    position: relative;
+    border-radius: 10px;
 }
-.fullname-below-img{
-    display: none;
-}
-.content-left {
-    width: 38%;
-    margin: 5px;
-    padding: 5px;
-    position: relative;
-}  
+
+/* CONTENT */
 .content-right {
-    width: 60%;
-    margin: 5px;
-    padding: 5px;
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
+    flex: 2;
+    min-width: 300px;
 }
-.content-right-resume {
-    width: 60%;
-    margin: 5px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+
+/* NAME */
+.name {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
-.experience {
-    font-size: 35px;
-    padding-top: 20px;
-    padding-left: 10px;
-    color: white;
-    font-weight: 500;
-    margin-left: 5rem;
-}
-.content-right .web-title {
-    color: #CF2D1E;
-    font-size: 28px;
+
+/* TITLE */
+.web-title {
+    color: #6ccff6;
+    font-size: 18px;
+    margin-bottom: 20px;
     font-weight: 500;
 }
-.web-title-resume {
-    margin-left: 9rem;
-    color: #CF2D1E;
-    font-size: 20px;
-    font-weight: 500;
-}
-.container-par {
+
+/* TEXT */
+.container-par p {
+    margin-bottom: 15px;
+    line-height: 1.7;
     color: #BEC7D5;
-    font: 15px;
-    font-family: 'Raleway', sans-serif;
-
 }
+
+/* SUMMARY GRID */
 .summary-detail {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.colu-1, .colu-2, .colu-3, .colu-4, .colu-5, .colu-6 {
-    width: 45%;
-    padding: 5px;
-    margin: 10px;
-
-}
-.fa-chevron-right{
-    color: red;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin-top: 20px;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.summary-detail span {
+    font-size: 14px;
+    color: #ccc;
 }
-.service-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+
+.summary-detail i {
+    color: #6ccff6;
+    margin-right: 5px;
 }
-.service-left, .service-mid, .service-right {
-    width: 30%;
-    margin: 10px 10px 20px 15px;
-    padding: 4rem 5px;
-    color: white;
-    background-color: #2D2D2D96;
+
+/* WHAT I DO */
+.what-i-do {
+    margin-top: 25px;
+}
+
+.what-i-do ul {
+    padding-left: 20px;
+}
+
+.what-i-do li {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+/* FLEX ITEMS CLEANER LOOK */
+.flex-container div {
     text-align: center;
+    border-radius: 8px;
+    transition: 0.3s ease;
 }
-.service-left:hover, .service-mid:hover, .service-right:hover {
-    background-color: #CF2D1E;
-}
-.service-left i {
-    display: flex;
-    flex-direction: column;
-    background-color:rgb(214, 72, 72);
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height: 4rem;
-    border-radius: 3px;
-  }
-.service-left i:hover, .fa-wordpress:hover, .fa-wix:hover, .fa-newspaper:hover, .fa-paintbrush:hover {
-    display: flex;
-    flex-direction: column;
-    background-color:rgb(255, 255, 255);
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height: 4rem;
-    border-radius: 3px;
-    color: #CF2D1E;
-}
-.service-mid i {
-    display: flex;
-    flex-direction: column;
-    background-color:rgb(214, 72, 72);
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height: 4rem;
-    border-radius: 3px;
-}
-.service-right i {
-    display: flex;
-    flex-direction: column;
-    background-color:rgb(214, 72, 72);
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height: 4rem;
-    border-radius: 3px;
-  }
 
-.card-container {
-    padding-bottom: 5rem;
+.flex-container div:hover {
+    transform: translateY(-3px);
+    background-color: #6ccff6;
+    color: #003049;
 }
-.card {
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .two-column-container {
+        flex-direction: column;
+    }
+
+    .summary-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+}/* ===== ABOUT SECTION CLEAN FIX ===== */
+
+.two-column-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.flex-left, .flex-mid, .flex-right {
-    width: 30%;
-    margin: 10px 10px 20px 0px;
-    padding: 18px 5px;
-    color: white;
-    background-color: #2D2D2D96;
+
+/* IMAGE */
+.image-left {
+    flex: 1;
+    min-width: 280px;
+    height: 350px;
+    background-image: url(../images/Graduation\ Pic.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
 }
-.flex-left:hover, .flex-mid:hover, .flex-right:hover {
-    background-color: #0e0e0e96;
+
+/* CONTENT */
+.content-right {
+    flex: 2;
+    min-width: 300px;
 }
-.python {
-    color: #54CBB6;
+
+/* NAME */
+.name {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
-.data-science {
-    color: #F60419;
+
+/* TITLE */
+.web-title {
+    color: #6ccff6;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
-.virtual-assistant {
-    color: #F34235;
+
+/* TEXT */
+.container-par p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #BEC7D5;
 }
-.vlogging {
-    color: #BADA55;
+
+/* SUMMARY GRID */
+.summary-detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin-top: 20px;
 }
-.biking {
-    color: #54CBB6;
+
+.summary-detail span {
+    font-size: 14px;
+    color: #ccc;
 }
-.cyber-security {
-    color: #4682B4;
+
+.summary-detail i {
+    color: #6ccff6;
+    margin-right: 5px;
+}
+
+/* WHAT I DO */
+.what-i-do {
+    margin-top: 25px;
+}
+
+.what-i-do ul {
+    padding-left: 20px;
+}
+
+.what-i-do li {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+/* FLEX ITEMS CLEANER LOOK */
+.flex-container div {
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.flex-container div:hover {
+    transform: translateY(-3px);
+    background-color: #6ccff6;
+    color: #003049;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .two-column-container {
+        flex-direction: column;
+    }
+
+    .summary-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .name {
+        font-size: 26px;
+    }
 }
 
 
