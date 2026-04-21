@@ -878,3 +878,68 @@ input[type=text], select, textarea {
         font-size: 12px;
     }
 }
+
+/* ===== FINAL FIX (DO NOT REMOVE) ===== */
+
+/* FORCE NAME WHITE */
+.name {
+    color: #ffffff !important;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* FIX TITLE */
+.content-right .web-title {
+    font-size: 20px !important;
+    font-weight: 500;
+    color: #ff4d4d !important;
+    margin-bottom: 15px;
+}
+
+/* FIX PARAGRAPH */
+.container-par p {
+    color: #d1d5db !important;
+    line-height: 1.7;
+}
+
+/* FIX SUMMARY GRID */
+.summary-detail {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin-top: 15px;
+}
+
+/* REMOVE OLD COLUMN BREAKING */
+.colu-1, .colu-2, .colu-3, .colu-4, .colu-5, .colu-6 {
+    width: auto !important;
+    margin: 0 !important;
+}
+
+/* ICON FIX */
+.fa-chevron-right {
+    color: #ff4d4d;
+    margin-right: 6px;
+}
+
+/* CARD DESIGN */
+.info-card {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,77,77,0.3);
+}
+
+/* LIST */
+.what-i-do li {
+    color: #d1d5db;
+    margin-bottom: 6px;
+}
+
+.what-i-do li:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    transition: 0.2s;
+}
