@@ -943,3 +943,59 @@ input[type=text], select, textarea {
     transform: translateX(5px);
     transition: 0.2s;
 }
+
+/* FIX LAYOUT */
+.black-bar {
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+}
+
+/* REMOVE OLD LEFT PUSH */
+.web-title-resume,
+.year-2,
+.para-resume,
+.para-resume-2,
+.email-experience {
+  margin-left: 0 !important;
+}
+
+/* NEW CLEAN BLOCK */
+.resume-block {
+  margin-top: 20px;
+}
+
+.resume-block h4 {
+  color: #6ccff6;
+  margin-top: 20px;
+}
+
+.year-tag {
+  display: inline-block;
+  background: #2d2d2d;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 8px 0;
+  color: #ccc;
+  border-radius: 5px;
+}
+
+.resume-block ul {
+  padding-left: 20px;
+}
+
+.resume-block li {
+  margin-bottom: 6px;
+  color: #d1d5db;
+}
+
+/* FIX WHAT I DO WIDTH */
+.info-card {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* FIX FOOTER */
+footer {
+  margin-top: 40px;
+}
