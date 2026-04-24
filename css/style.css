@@ -878,44 +878,104 @@ input[type=text], select, textarea {
         font-size: 12px;
     }
 }
+/* ========================= */
+/* 🔥 RESUME FINAL FIX */
+/* ========================= */
 
-/* ===== RESUME MATCH ABOUT DESIGN ===== */
+/* FORCE CLEAN TEXT */
+.black-bar {
+  color: #ffffff;
+}
 
-/* LIST STYLE */
+/* LEFT SIDE (WHAT I DO) */
 .about-list {
-  color: #BEC7D5;
+  color: #ffffff !important;
   margin-left: 20px;
   line-height: 1.8;
 }
 
-/* RIGHT SIDE */
+/* FIX TWO COLUMN BALANCE */
+.two-column-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* LEFT WIDTH */
+.content-left {
+  width: 40%;
+}
+
+/* RIGHT WIDTH */
+.content-right-resume {
+  width: 60%;
+}
+
+/* RESET OLD BROKEN MARGINS */
+.web-title-resume,
+.year-2,
+.para-resume,
+.para-resume-2,
+.email-experience {
+  margin-left: 0 !important;
+}
+
+/* EXPERIENCE TITLE */
+.experience {
+  margin-left: 0 !important;
+  padding-left: 0;
+}
+
+/* JOB BLOCK */
 .job-block {
   margin-bottom: 30px;
+}
+
+/* JOB TITLE */
+.web-title-resume,
+.email-experience {
+  color: #CF2D1E;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* YEAR BADGE */
+.year-2 {
+  display: inline-block;
+  background-color: #2D2D2D;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 /* TEXT */
 .para-resume p,
 .para-resume-2 p {
-  color: #BEC7D5;
+  color: #e5e7eb !important;
+  margin-bottom: 6px;
+  line-height: 1.6;
 }
 
-/* ALIGNMENT (IMPORTANT FIX) */
-.web-title-resume {
-  margin-left: 6rem;
-}
-
-.year-2 {
-  margin-left: 6rem;
-}
-
-.para-resume,
-.para-resume-2 {
-  margin-left: 6.5rem;
-}
-
-/* COLORS MATCH ABOUT */
-.web-title-resume,
-.email-experience {
+/* LINKS */
+.shape-website {
   color: #CF2D1E;
 }
 
+.shape-website:hover {
+  color: #ffffff;
+}
+
+/* FIX MOBILE */
+@media screen and (max-width: 1150px) {
+  .two-column-container {
+    flex-direction: column;
+  }
+
+  .content-left,
+  .content-right-resume {
+    width: 100%;
+  }
+}
