@@ -1,159 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/969167eea6.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/969167eea6.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
+    <div class="background">
+        <header class="header">
+            <div class="fullname-container">
+              <div ><a href="index.html" class="fullname">Niño Anthony Vitualla</a> </div>
+            </div>
+    
+            <div class="header-2 sticky-top">
+                <nav class="navbar">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>  
 
-<div class="background">
+            <nav class="navbar navbar-dark fixed-top navbar-hide">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="resume.html">Resume</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services.html">Services</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+        </header>
+<!-- ================= UPDATED RESUME CONTENT ================= -->
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="fullname-container">
-      <a href="index.html" class="fullname">Niño Anthony Vitualla</a>
-    </div>
-
-    <div class="header-2 sticky-top">
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <div class="black-bar">
-
-    <!-- TITLE -->
-    <div class="container-title">
-      <div class="title">RESUME</div>
-      <div class="line"></div>
-    </div>
-
-    <div class="title-2">CHECK MY RESUME</div>
-
-    <!-- TWO COLUMN LAYOUT -->
-    <div class="two-column-container">
-
-      <!-- LEFT SIDE -->
-      <div class="content-left">
-
-        <div class="education">
-          <h2>What I Do</h2>
-        </div>
-
-        <div class="container-500px">
-          <ul style="color:#BEC7D5; margin-left:20px;">
-            <li>Cold Email Campaign Setup & Optimization</li>
-            <li>Lead Generation & Data Enrichment</li>
-            <li>Email Deliverability (SPF, DKIM, DMARC)</li>
-            <li>Google Workspace Setup & Admin</li>
-            <li>Automation & Workflow Systems</li>
-            <li>Campaign Tracking (Google Sheets)</li>
-            <li>Virtual Assistant Operations</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- RIGHT SIDE -->
-      <div class="content-right-resume">
-
-        <div class="experience">
-          <h2>Professional Experience</h2>
-        </div>
-
-        <!-- JOB 1 -->
-        <div class="web-title-resume">
-          - VIRTUAL ASSISTANT / EMAIL SYSTEMS SPECIALIST
-        </div>
-
-        <div class="year-2"><p>2023 – Present</p></div>
-
-        <div class="para-resume">
-          <p>- Managed cold email campaigns (Smartlead, Instantly)</p>
-          <p>- Lead generation, enrichment, and verification</p>
-          <p>- Set up SPF, DKIM, DMARC, Google Workspace</p>
-          <p>- Built tracking systems in Google Sheets</p>
-          <p>- Monitored deliverability and performance</p>
-          <p>- Managed assistants and workflows</p>
-        </div>
-
-        <!-- JOB 2 -->
-        <div class="web-title-resume">- WEB DEVELOPER</div>
-        <div class="year-2"><p>2021 – 2022</p></div>
-
-        <div class="para-resume">
-          <p>- Built landing pages and dashboards (Wix)</p>
-          <p>- Maintained client websites</p>
-          <p>- WordPress-focused development</p>
-
-          <p>
-            Websites:<br>
-            <a class="shape-website" href="https://www.tenacityacademy.com/" target="_blank">tenacityacademy.com</a><br>
-            <a class="shape-website" href="https://www.tenacityclean.com/" target="_blank">tenacityclean.com</a>
-          </p>
-        </div>
-
-        <!-- JOB 3 -->
-        <div class="email-experience">- DIGITAL MARKETING SPECIALIST</div>
-        <div class="year-2"><p>2021 – 2022</p></div>
-
-        <div class="para-resume-2">
-          <p>- Managed marketing campaigns</p>
-          <p>- Email sequences (ConvertKit)</p>
-          <p>- Graphic design & video editing</p>
-          <p>- Paid ads & brand support</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+<div class="info-card">
+  <h3>What I Do</h3>
+  <ul class="what-i-do">
+    <li>Cold Email Campaign Setup & Optimization</li>
+    <li>Lead Generation & Data Enrichment</li>
+    <li>Email Deliverability (SPF, DKIM, DMARC)</li>
+    <li>Google Workspace Setup & Admin</li>
+    <li>Automation & Workflow Systems</li>
+    <li>Campaign Tracking (Google Sheets)</li>
+    <li>Virtual Assistant Operations</li>
+  </ul>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="fullname">
-    <p>Niño Anthony Vitualla</p>
+<div class="experience">
+  <h2>Professional Experience</h2>
+</div>
 
-    <div class="soc-media-icon footer-soc">
-      <a href="https://www.facebook.com/skionin123/" target="_blank">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
+<div class="web-title-resume">- VIRTUAL ASSISTANT / EMAIL SYSTEMS & OPERATIONS SPECIALIST</div>
 
-      <a href="https://www.instagram.com/miethonydesign/" target="_blank">
-        <i class="fa-brands fa-square-instagram"></i>
-      </a>
+<div class="container-par">
+  <div class="year-2"><p>2023 – Present</p></div>
 
-      <a href="https://www.linkedin.com/in/YOUR-USERNAME/" target="_blank">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-
-      <a href="https://www.tiktok.com/@YOUR-USERNAME" target="_blank">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-    </div>
-
+  <div class="para-resume">
+    <p>- Managed and optimized cold email campaigns using Smartlead and Instantly</p>
+    <p>- Handled lead generation, enrichment, and email verification</p>
+    <p>- Set up domains, SPF, DKIM, DMARC, and Google Workspace systems</p>
+    <p>- Built tracking systems in Google Sheets with automation</p>
+    <p>- Monitored deliverability, sender health, and campaign performance</p>
+    <p>- Supported backend operations for multiple campaigns</p>
+    <p>- Managed assistants and workflows for VA operations</p>
   </div>
+
+  <br>
+
+  <div class="web-title-resume">- WEB DEVELOPER</div>
+  <div class="year-2"><p>2021 – 2022</p></div>
+
+  <div class="para-resume">
+    <p>- Built landing pages and assisted front-end dashboard (Wix)</p>
+    <p>- Maintained and extended client websites</p>
+    <p>- Focused on WordPress development</p>
+
+    <p>
+      Websites:<br>
+      <a class="shape-website" href="https://www.tenacityacademy.com/">tenacityacademy.com</a><br>
+      <a class="shape-website" href="https://www.tenacityclean.com/">tenacityclean.com</a>
+    </p>
+  </div>
+
+  <br>
+
+  <div class="email-experience">- DIGITAL MARKETING SPECIALIST</div>
+  <div class="year-2"><p>2021 – 2022</p></div>
+
+  <div class="para-resume-2">
+    <p>- Managed marketing campaigns</p>
+    <p>- Email sequences (ConvertKit)</p>
+    <p>- Graphic design & video editing</p>
+    <p>- Paid ads & brand support</p>
+  </div>
+</div>
+    
+    <footer>
+      <div class="fullname">
+      <p>Niño Anthony Vitualla</p>
+      <div class="soc-media-icon footer-soc">
+        <a href="https://www.facebook.com/skionin123/">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/miethonydesign/">
+            <i class="fa-brands fa-square-instagram"></i>
+        </a>
+    </div> 
+      
+      </div>
+  </footer>
+    <footer>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>    
 </body>
 </html>
