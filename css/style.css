@@ -879,3 +879,43 @@ input[type=text], select, textarea {
     }
 }
 
+/* ===== RESUME MATCH ABOUT DESIGN ===== */
+
+/* LIST STYLE */
+.about-list {
+  color: #BEC7D5;
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+/* RIGHT SIDE */
+.job-block {
+  margin-bottom: 30px;
+}
+
+/* TEXT */
+.para-resume p,
+.para-resume-2 p {
+  color: #BEC7D5;
+}
+
+/* ALIGNMENT (IMPORTANT FIX) */
+.web-title-resume {
+  margin-left: 6rem;
+}
+
+.year-2 {
+  margin-left: 6rem;
+}
+
+.para-resume,
+.para-resume-2 {
+  margin-left: 6.5rem;
+}
+
+/* COLORS MATCH ABOUT */
+.web-title-resume,
+.email-experience {
+  color: #CF2D1E;
+}
+
