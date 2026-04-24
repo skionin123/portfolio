@@ -999,3 +999,58 @@ input[type=text], select, textarea {
 footer {
   margin-top: 40px;
 }
+
+/* ===== FORCE TEXT VISIBILITY ===== */
+
+/* Make ALL resume text readable */
+.black-bar {
+  color: #ffffff;
+}
+
+/* Fix headings */
+.experience h2 {
+  color: #ffffff !important;
+}
+
+.resume-block h4 {
+  color: #6ccff6 !important;
+  font-weight: 600;
+}
+
+/* Fix list text */
+.resume-block li {
+  color: #e5e7eb !important;
+}
+
+/* Fix paragraph override from old CSS */
+.container-par,
+.para-resume,
+.para-resume-2 {
+  color: #e5e7eb !important;
+}
+
+/* Fix What I Do card */
+.info-card {
+  border: 1px solid rgba(255, 77, 77, 0.4);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.info-card h3 {
+  color: #ff4d4d !important;
+}
+
+.what-i-do li {
+  color: #ffffff !important;
+}
+
+/* Improve spacing */
+.resume-block {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* Year tag clearer */
+.year-tag {
+  background: #1f2937;
+  color: #ffffff;
+}
