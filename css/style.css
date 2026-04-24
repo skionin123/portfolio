@@ -944,3 +944,74 @@ input[type=text], select, textarea {
     transition: 0.2s;
 }
 
+/* ===== MODERN RESUME UPGRADE ===== */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.skill-badge {
+    background: rgba(255, 77, 77, 0.15);
+    border: 1px solid rgba(255, 77, 77, 0.4);
+    color: #ff4d4d;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.skill-badge:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* TIMELINE */
+.timeline {
+    margin-top: 20px;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #ff4d4d;
+    border-radius: 50%;
+}
+
+.timeline-item h4 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.timeline-item ul {
+    padding-left: 15px;
+}
+
+.timeline-item li {
+    color: #d1d5db;
+    margin-bottom: 6px;
+}
+
+/* IMPROVE CARD */
+.info-card {
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff4d4d;
+}
