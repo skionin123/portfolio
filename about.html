@@ -1,230 +1,1498 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/969167eea6.js" crossorigin="anonymous"></script>
-    
-  </head>
-  <body>
-    <div class="background">
-      <header class="header">
-        <div class="fullname-container">
-          <div ><a href="index.html" class="fullname">Niño Anthony Vitualla</a> </div>
-        </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PickleStack Live</title>
 
-        <div class="header-2 sticky-top">
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>  
+<style>
+* { box-sizing: border-box; }
 
-        <nav class="navbar navbar-dark fixed-top navbar-hide">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="resume.html">Resume</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-        
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #020617;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-      </header>
+body {
+  padding-bottom: 74px;
+}
 
-      
+body.score-mode {
+  padding-bottom: 0;
+  background: #000;
+  overflow: hidden;
+}
 
-      <!----------------- CONTENT ------------------->
-      <div class="black-bar">
-  <div class="container-title">
-    <div class="title">ABOUT</div>
-    <div class="line"></div>
+.app {
+  max-width: 1500px;
+  margin: auto;
+  padding: 12px;
+}
+
+body.score-mode .app {
+  max-width: none;
+  padding: 4px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 58px);
+  font-weight: 900;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+h3 {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+p {
+  color: #94a3b8;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+button, .photo-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+}
+
+.green { background: #16a34a; }
+.yellow { background: #facc15; color: #000; }
+.danger { background: #991b1b; }
+.dark { background: #111827; border: 1px solid #475569; }
+
+input, select {
+  width: 100%;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  padding: 11px;
+  background: #020617;
+  color: white;
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.hidden { display: none !important; }
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #020617;
+  border-top: 1px solid #334155;
+  z-index: 100;
+}
+
+body.score-mode .bottom-nav,
+body.score-mode .normal-header,
+body.score-mode .voice-status {
+  display: none;
+}
+
+.bottom-nav button {
+  border-radius: 0;
+  background: #020617;
+  border-right: 1px solid #1e293b;
+  font-size: 12px;
+  padding: 10px 4px;
+}
+
+.bottom-nav button.active {
+  background: #2563eb;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr .85fr;
+  gap: 10px;
+  background: #050505;
+  border-radius: 18px;
+  padding: 16px;
+  min-height: 60vh;
+}
+
+body.score-mode .scoreboard {
+  min-height: calc(100vh - 54px);
+  border-radius: 8px;
+  padding: 8px;
+  gap: 6px;
+}
+
+.score-column, .serve-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.team-name, .game-label {
+  width: 95%;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: clamp(30px, 5vw, 70px);
+  font-weight: 900;
+  outline: none;
+}
+
+.active-server {
+  color: #38bdf8;
+}
+
+.score-number {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: clamp(145px, 22vw, 420px);
+  font-weight: 900;
+  line-height: .9;
+}
+
+.server-circle {
+  width: clamp(145px, 19vw, 300px);
+  height: clamp(145px, 19vw, 300px);
+  border-radius: 50%;
+  background: #ffe600;
+  color: #000;
+  font-size: clamp(100px, 14vw, 220px);
+  font-weight: 900;
+}
+
+.small-label {
+  color: #94a3b8;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.controls {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+body.score-mode .controls {
+  margin-top: 5px;
+  gap: 5px;
+}
+
+body.score-mode .controls button {
+  min-height: 36px;
+  font-size: 12px;
+  padding: 7px;
+}
+
+.photo-preview {
+  margin-top: 10px;
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #38bdf8;
+}
+
+#cameraVideo {
+  width: 100%;
+  max-height: 420px;
+  border-radius: 16px;
+  background: #000;
+}
+
+.court-list, .queue-list, .history-list, .stats-list, .winner-list {
+  display: grid;
+  gap: 10px;
+}
+
+.court-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timer {
+  font-size: 20px;
+  font-weight: 900;
+  color: #22c55e;
+}
+
+.timer.warn { color: #facc15; }
+.timer.danger-time { color: #ef4444; }
+
+.court-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.vs {
+  color: #facc15;
+  font-size: clamp(28px, 5vw, 64px);
+  font-weight: 900;
+  text-align: center;
+}
+
+.player-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.player-card {
+  background: #020617;
+  border: 1px solid #475569;
+  border-radius: 16px;
+  padding: 9px;
+  text-align: center;
+}
+
+.player-photo, .queue-photo {
+  background: #1e293b;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  margin-bottom: 7px;
+}
+
+.queue-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+}
+
+.player-name, .queue-name {
+  font-weight: 900;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.rating-line {
+  color: #facc15;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.meta-line {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 9px;
+}
+
+.mini-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.mini-buttons button {
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.court-actions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.stat-card, .history-card {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.voice-status {
+  text-align: center;
+  margin-top: 8px;
+  color: #38bdf8;
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .grid, .court-grid, .scoreboard {
+    grid-template-columns: 1fr;
+  }
+
+  .controls, .court-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue-item {
+    grid-template-columns: 58px 1fr;
+  }
+
+  .queue-item .mini-buttons {
+    grid-column: 1 / -1;
+  }
+
+  .score-number {
+    font-size: clamp(125px, 40vw, 250px);
+  }
+
+  .server-circle {
+    width: 160px;
+    height: 160px;
+    font-size: 115px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 650px) {
+  body.score-mode .scoreboard {
+    grid-template-columns: 1fr 1fr .85fr;
+  }
+
+  body.score-mode .score-number {
+    font-size: clamp(140px, 24vw, 320px);
+  }
+
+  body.score-mode .server-circle {
+    width: clamp(110px, 19vw, 210px);
+    height: clamp(110px, 19vw, 210px);
+    font-size: clamp(84px, 15vw, 160px);
+  }
+
+  body.score-mode .team-name,
+  body.score-mode .game-label {
+    font-size: clamp(26px, 5vw, 52px);
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<section id="tabScore">
+  <div class="normal-header">
+    <h1>🏓 PickleStack Live</h1>
+    <p>Professional pickleball scoreboard, player stack, ratings, court timers, and rotation tools.</p>
   </div>
 
-  <div class="title-2">Know More About Me</div>
+  <main class="scoreboard">
+    <section class="score-column">
+      <input id="leftName" class="team-name active-server" value="Team A">
+      <button id="leftScore" class="score-number" onclick="addPointServing()">0</button>
+      <div class="small-label">Serving Team</div>
+    </section>
 
-  <div class="two-column-container">
+    <section class="score-column">
+      <input id="rightName" class="team-name" value="Team B">
+      <button id="rightScore" class="score-number" onclick="addPointReceiving()">0</button>
+      <div class="small-label">Receiving Team</div>
+    </section>
 
-    <div class="image-left"></div>
+    <section class="serve-column">
+      <input id="gameInput" class="game-label" value="Game 1">
+      <button id="serverNumber" class="server-circle" onclick="secondServe()">2</button>
+      <div class="small-label">Serve</div>
+    </section>
+  </main>
 
-    <div class="content-right">
+  <section class="controls">
+    <button onclick="addPointServing()">Point</button>
+    <button onclick="secondServe()">2nd Serve</button>
+    <button onclick="sideOut()">Side Out</button>
+    <button onclick="undoScore()">Undo</button>
+    <button onclick="speakScore()">Speaker</button>
+    <button onclick="toggleScoreMode()" id="landscapeButton">Landscape</button>
+    <button onclick="startVoice()">Voice</button>
+    <button class="danger" onclick="resetScore()">Reset</button>
+  </section>
 
-      <h1 class="name">Niño Anthony Vitualla</h1>
+  <div class="voice-status">
+    Voice: <span id="voiceStatus">Off</span> · <span id="lastCommand">Say “point”, “second serve”, “side out”, “undo”, or “reset”.</span>
+  </div>
+</section>
 
-      <div class="web-title">
-        Web Developer • Digital Marketing • Virtual Assistant
-      </div>
-
-      <div class="container-par">
-
-        <p>Hello! I help businesses grow by building websites, running marketing campaigns, and creating efficient backend systems.</p>
-
-        <p>
-          I specialize in lead generation, email marketing, and automation. I’ve worked with tools like Smartlead, Apollo, and various scraping and enrichment tools to generate and verify high-quality leads.
-        </p>
-
-        <p>
-          I also design and build websites using WordPress, Webflow, and custom HTML/CSS — focusing on clean design and conversion.
-        </p>
-
-        <!-- CARD DESIGN -->
-        <div class="info-card">
-
-          <div class="summary-detail">
-            <span><i class="fa-solid fa-chevron-right"></i> Location: Cebu, Philippines</span>
-            <span><i class="fa-solid fa-chevron-right"></i> Role: General Virtual Assistant</span>
-            <span><i class="fa-solid fa-chevron-right"></i> Specialty: Lead Generation & Email Marketing</span>
-            <span><i class="fa-solid fa-chevron-right"></i> Focus: Automation & Business Systems</span>
-          </div>
-
-          <div class="what-i-do">
-            <p><strong>What I can help you with:</strong></p>
-            <ul>
-              <li>✔ Lead Generation & Email Outreach</li>
-              <li>✔ Website Design (WordPress / Webflow)</li>
-              <li>✔ Social Media Creatives & Ads</li>
-              <li>✔ Admin & Virtual Assistant Tasks</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
+<section id="tabCourts" class="hidden">
+  <div class="card">
+    <h1>Courts</h1>
+    <p id="waitEstimate">Estimated wait: Add players and courts to calculate.</p>
+    <div class="grid">
+      <button class="green" onclick="addCourt()">+ Court</button>
+      <button class="yellow" onclick="shuffleQueue()">Shuffle Queue</button>
+      <button onclick="loadAllEmptyCourts()">Load Empty</button>
+      <button onclick="balanceWaitingQueue()">Balance Queue</button>
+      <button class="danger" onclick="resetAll()">Reset All</button>
     </div>
   </div>
-          <div class="container-title">
-  <div class="title">SKILLS</div>
-  <div class="line"></div>
-</div>
 
-<div class="flex-container">
-  <div class="flex-left">Lead Generation</div>
-  <div class="flex-mid">Email Marketing</div>
-  <div class="flex-right">Cold Outreach</div>
+  <div id="winnerQueueCard" class="card hidden">
+    <h2>Winner Queue</h2>
+    <p>Winner teams wait here for Winner vs Winner mode.</p>
+    <div id="winnerQueue" class="winner-list"></div>
+  </div>
 
-  <div class="flex-left">Data Scraping</div>
-  <div class="flex-mid">List Building</div>
-  <div class="flex-right">CRM Management</div>
-</div>
-        <div class="container-title">
-  <div class="title">EXPERIENCED IN</div>
-  <div class="line"></div>
-</div>
+  <div id="courtList" class="court-list"></div>
+</section>
 
-<div class="flex-container">
-  <div class="flex-left">Smartlead Campaigns</div>
-  <div class="flex-mid">Apollo & Lead Tools</div>
-  <div class="flex-right">Email Deliverability</div>
+<section id="tabStack" class="hidden">
+  <section class="card">
+    <h1>Add Player</h1>
+    <div class="grid">
+      <input id="playerNameInput" placeholder="Player name">
 
-  <div class="flex-left">Canva & Photoshop</div>
-  <div class="flex-mid">Webflow & WordPress</div>
-  <div class="flex-right">Google Sheets</div>
-</div>
-        <div class="container-title">
-  <div class="title">TOOLS I USE</div>
-  <div class="line"></div>
-</div>
+      <select id="playerRatingInput">
+        <option value="1">⭐ Beginner</option>
+        <option value="2">⭐⭐ Recreational</option>
+        <option value="3" selected>⭐⭐⭐ Intermediate</option>
+        <option value="4">⭐⭐⭐⭐ Advanced</option>
+        <option value="5">⭐⭐⭐⭐⭐ Competitive</option>
+      </select>
 
-<div class="flex-container">
-  <div class="flex-left">Smartlead</div>
-  <div class="flex-mid">Apollo</div>
-  <div class="flex-right">MillionVerifier</div>
+      <label class="photo-btn">
+        Upload
+        <input id="photoInput" type="file" accept="image/*" hidden>
+      </label>
 
-  <div class="flex-left">Canva</div>
-  <div class="flex-mid">Photoshop</div>
-  <div class="flex-right">Webflow</div>
-</div>
-
-        <!-- ------TESTIMONIALS------ -->
-        <div class="container-title">
-          <div class="title">
-            TESTIMONIALS
-          </div>
-          <div class="line"></div>
-        </div>
-
-          
-        <section class="testimonial text-center">
-         
-          <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <div class="testimonial4_slide">
-                  <img src="./images/vincent.jpg"/>
-                  <p>Awesome communication. Can understand fast and easily </p>
-                  <h4>Vincent</h4>
-                 </div>
-              </div>     
-            </div>
-              
-            <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#testimonial4" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>  
-          </div>
-       
-        </section>
-
-        
-          
-          
-      </div>
-        
-      
-
-   
+      <button onclick="openCamera()">Take Photo</button>
+      <button class="green" onclick="addPlayer()">Join</button>
     </div>
-    <footer>
-      <div class="fullname">
-      <p>Niño Anthony Vitualla</p>
-      <div class="soc-media-icon footer-soc">
-        <a href="https://www.facebook.com/skionin123/">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/miethonydesign/">
-            <i class="fa-brands fa-square-instagram"></i>
-        </a>
-    </div> 
-      
+    <div id="photoPreview" class="photo-preview hidden"></div>
+  </section>
+
+  <section id="cameraPanel" class="card hidden">
+    <h2>Take Player Picture</h2>
+    <video id="cameraVideo" autoplay playsinline></video>
+    <div class="grid" style="margin-top:10px;">
+      <button class="green" onclick="capturePhoto()">Use Photo</button>
+      <button onclick="flipCamera()">Flip</button>
+      <button class="danger" onclick="closeCamera()">Close</button>
+    </div>
+    <canvas id="cameraCanvas" hidden></canvas>
+  </section>
+
+  <section class="card">
+    <h2>Waiting Stack</h2>
+    <p>Ratings help balance games. Win rate updates after games are recorded.</p>
+    <div class="grid" style="margin-bottom:12px;">
+      <button class="yellow" onclick="shuffleQueue()">Shuffle</button>
+      <button onclick="balanceWaitingQueue()">Balance</button>
+      <button onclick="loadAllEmptyCourts()">Load Empty</button>
+      <button class="green" onclick="addCourt()">Add Court</button>
+      <button class="danger" onclick="clearWaitingQueue()">Clear</button>
+    </div>
+    <div id="queueList" class="queue-list"></div>
+  </section>
+</section>
+
+<section id="tabStats" class="hidden">
+  <section class="card">
+    <h1>Stats</h1>
+    <p>Tracks wins, losses, win rate, games played, time played, and rating.</p>
+  </section>
+
+  <section class="card">
+    <h2>Player Stats</h2>
+    <div id="statsList" class="stats-list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Court History</h2>
+    <div id="historyList" class="history-list"></div>
+  </section>
+</section>
+
+<section id="tabSettings" class="hidden">
+  <section class="card">
+    <h1>Settings</h1>
+
+    <label>Rotation Style</label>
+    <select id="rotationRule" onchange="saveSettings()">
+      <option value="king">King of Court</option>
+      <option value="split">Winners Split</option>
+      <option value="all">All 4 Rotate / Next 4</option>
+      <option value="winnerVsWinner">2+ Courts: Winner vs Winner</option>
+    </select>
+
+    <p id="ruleDescription"></p>
+
+    <label>Average game length</label>
+    <select id="averageGameMinutes" onchange="saveSettings()">
+      <option value="10">10 minutes</option>
+      <option value="12">12 minutes</option>
+      <option value="15">15 minutes</option>
+      <option value="20">20 minutes</option>
+    </select>
+
+    <br><br>
+
+    <label>
+      <input id="championshipMode" type="checkbox" onchange="saveSettings()" style="width:auto;">
+      Make Court 1 Championship Court
+    </label>
+
+    <p>After testing, this can be packaged for Android and iPhone using Capacitor.</p>
+  </section>
+</section>
+
+</div>
+
+<nav class="bottom-nav">
+  <button id="navScore" class="active" onclick="showTab('Score')">Score</button>
+  <button id="navCourts" onclick="showTab('Courts')">Courts</button>
+  <button id="navStack" onclick="showTab('Stack')">Stack</button>
+  <button id="navStats" onclick="showTab('Stats')">Stats</button>
+  <button id="navSettings" onclick="showTab('Settings')">Settings</button>
+</nav>
+
+<script>
+let players = [];
+let courts = [];
+let winnerTeams = [];
+let courtHistory = [];
+let playerStats = {};
+let selectedPhotoData = "";
+let cameraStream = null;
+let cameraFacing = "user";
+
+let teamA = { name: "Team A", score: 0 };
+let teamB = { name: "Team B", score: 0 };
+let servingTeam = "A";
+let serverNumberValue = 2;
+let scoreHistory = [];
+let recognition = null;
+let voiceRunning = false;
+
+const tabs = ["Score", "Courts", "Stack", "Stats", "Settings"];
+
+loadState();
+if (!courts.length) courts.push(makeCourt("Court 1"));
+renderAll();
+
+setInterval(() => {
+  renderCourts();
+  renderWaitEstimate();
+}, 1000);
+
+photoInput.addEventListener("change", async event => {
+  const file = event.target.files[0];
+  if (!file) return;
+  selectedPhotoData = await resizeImage(file, 500);
+  showPhotoPreview(selectedPhotoData);
+});
+
+function showTab(name) {
+  if (document.body.classList.contains("score-mode")) exitScoreMode();
+
+  tabs.forEach(t => {
+    document.getElementById("tab" + t).classList.toggle("hidden", t !== name);
+    document.getElementById("nav" + t).classList.toggle("active", t === name);
+  });
+}
+
+function toggleScoreMode() {
+  if (document.body.classList.contains("score-mode")) {
+    exitScoreMode();
+    return;
+  }
+
+  showTab("Score");
+  document.body.classList.add("score-mode");
+  landscapeButton.textContent = "Exit";
+  document.documentElement.requestFullscreen?.().catch?.(() => {});
+  screen.orientation?.lock?.("landscape").catch(() => {});
+}
+
+function exitScoreMode() {
+  document.body.classList.remove("score-mode");
+  landscapeButton.textContent = "Landscape";
+  document.exitFullscreen?.().catch?.(() => {});
+  screen.orientation?.unlock?.();
+}
+
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement && document.body.classList.contains("score-mode")) {
+    exitScoreMode();
+  }
+});
+
+function makeId() {
+  if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return String(Date.now()) + Math.random().toString(16).slice(2);
+}
+
+function makeCourt(name) {
+  return { id: makeId(), name, teamOne: [], teamTwo: [], startedAt: null };
+}
+
+function addCourt() {
+  courts.push(makeCourt("Court " + (courts.length + 1)));
+  saveState();
+  renderAll();
+}
+
+function removeCourt(id) {
+  if (!confirm("Remove this court? Players return to waiting stack.")) return;
+  const court = courts.find(c => c.id === id);
+  if (court) players.push(...court.teamOne, ...court.teamTwo);
+  courts = courts.filter(c => c.id !== id);
+  if (!courts.length) courts.push(makeCourt("Court 1"));
+  saveState();
+  renderAll();
+}
+
+function addPlayer() {
+  const name = playerNameInput.value.trim();
+  if (!name) return alert("Enter player name.");
+
+  const rating = Number(playerRatingInput.value || 3);
+
+  const player = {
+    id: makeId(),
+    name,
+    rating,
+    photo: selectedPhotoData || ""
+  };
+
+  players.push(player);
+  ensureStats(player);
+
+  playerNameInput.value = "";
+  playerRatingInput.value = "3";
+  selectedPhotoData = "";
+  photoInput.value = "";
+  showPhotoPreview("");
+
+  saveState();
+  renderAll();
+}
+
+function loadNextFour(courtId) {
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+
+  if (court.teamOne.length || court.teamTwo.length) {
+    return alert("Court already has players. Use Team Wins, All 4 Out, or Clear Court first.");
+  }
+
+  loadFourIntoCourt(court);
+  saveState();
+  renderAll();
+}
+
+function loadFourIntoCourt(court) {
+  if (rotationRule.value === "winnerVsWinner" && courts.length > 1 && winnerTeams.length >= 2) {
+    court.teamOne = winnerTeams.shift().players;
+    court.teamTwo = winnerTeams.shift().players;
+  } else {
+    const next = players.splice(0, 4);
+    court.teamOne = next.slice(0, 2);
+    court.teamTwo = next.slice(2, 4);
+  }
+
+  court.startedAt = Date.now();
+}
+
+function loadAllEmptyCourts() {
+  courts.forEach(court => {
+    if (!court.teamOne.length && !court.teamTwo.length) {
+      if (players.length >= 1 || winnerTeams.length >= 2) loadFourIntoCourt(court);
+    }
+  });
+
+  saveState();
+  renderAll();
+}
+
+function allFourOutNextFour(courtId) {
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+
+  players.push(...court.teamOne, ...court.teamTwo);
+  court.teamOne = [];
+  court.teamTwo = [];
+  loadFourIntoCourt(court);
+
+  saveState();
+  renderAll();
+}
+
+function finishGame(courtId, winnerKey) {
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+
+  const winners = winnerKey === "teamOne" ? court.teamOne : court.teamTwo;
+  const losers = winnerKey === "teamOne" ? court.teamTwo : court.teamOne;
+  const duration = court.startedAt ? Date.now() - court.startedAt : 0;
+  const rule = rotationRule.value;
+
+  recordGame(court, winners, losers, duration);
+
+  if (rule === "winnerVsWinner" && courts.length > 1) {
+    if (winners.length) winnerTeams.push({ id: makeId(), players: winners });
+    players.push(...losers);
+    court.teamOne = [];
+    court.teamTwo = [];
+    court.startedAt = null;
+    loadAllEmptyCourts();
+    return;
+  }
+
+  if (rule === "split") {
+    players.push(...losers);
+    const nextTwo = players.splice(0, 2);
+    court.teamOne = [winners[0], nextTwo[0]].filter(Boolean);
+    court.teamTwo = [winners[1], nextTwo[1]].filter(Boolean);
+    court.startedAt = Date.now();
+  } else if (rule === "all") {
+    players.push(...court.teamOne, ...court.teamTwo);
+    court.teamOne = [];
+    court.teamTwo = [];
+    loadFourIntoCourt(court);
+  } else {
+    players.push(...losers);
+    const nextTwo = players.splice(0, 2);
+    court.teamOne = winners;
+    court.teamTwo = nextTwo;
+    court.startedAt = Date.now();
+  }
+
+  saveState();
+  renderAll();
+}
+
+function recordGame(court, winners, losers, duration) {
+  winners.forEach(p => {
+    ensureStats(p);
+    playerStats[p.id].wins++;
+    playerStats[p.id].games++;
+    playerStats[p.id].timeMs += duration;
+  });
+
+  losers.forEach(p => {
+    ensureStats(p);
+    playerStats[p.id].losses++;
+    playerStats[p.id].games++;
+    playerStats[p.id].timeMs += duration;
+  });
+
+  courtHistory.unshift({
+    id: makeId(),
+    court: court.name,
+    winners: winners.map(p => p.name),
+    losers: losers.map(p => p.name),
+    duration,
+    time: new Date().toLocaleTimeString()
+  });
+
+  courtHistory = courtHistory.slice(0, 50);
+}
+
+function ensureStats(player) {
+  if (!playerStats[player.id]) {
+    playerStats[player.id] = {
+      id: player.id,
+      name: player.name,
+      rating: player.rating || 3,
+      photo: player.photo,
+      wins: 0,
+      losses: 0,
+      games: 0,
+      timeMs: 0
+    };
+  } else {
+    playerStats[player.id].name = player.name;
+    playerStats[player.id].rating = player.rating || playerStats[player.id].rating || 3;
+    playerStats[player.id].photo = player.photo;
+  }
+}
+
+function clearCourt(id) {
+  const court = courts.find(c => c.id === id);
+  if (!court) return;
+  players.push(...court.teamOne, ...court.teamTwo);
+  court.teamOne = [];
+  court.teamTwo = [];
+  court.startedAt = null;
+  saveState();
+  renderAll();
+}
+
+function shuffleCourt(id) {
+  const court = courts.find(c => c.id === id);
+  if (!court) return;
+  const all = shuffle([...court.teamOne, ...court.teamTwo]);
+  court.teamOne = all.slice(0, 2);
+  court.teamTwo = all.slice(2, 4);
+  saveState();
+  renderAll();
+}
+
+function returnCourtPlayerToQueue(courtId, teamKey, playerId) {
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+
+  const player = court[teamKey].find(p => p.id === playerId);
+  court[teamKey] = court[teamKey].filter(p => p.id !== playerId);
+  if (player) players.push(player);
+
+  saveState();
+  renderAll();
+}
+
+function removeCourtPlayerCompletely(courtId, teamKey, playerId) {
+  if (!confirm("Remove this player completely?")) return;
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+  court[teamKey] = court[teamKey].filter(p => p.id !== playerId);
+  saveState();
+  renderAll();
+}
+
+function replaceCourtPlayer(courtId, teamKey, playerId) {
+  if (!players.length) return alert("No waiting players available.");
+
+  const court = courts.find(c => c.id === courtId);
+  if (!court) return;
+
+  const currentPlayer = court[teamKey].find(p => p.id === playerId);
+  const replacement = players.shift();
+
+  court[teamKey] = court[teamKey].map(p => p.id === playerId ? replacement : p);
+  if (currentPlayer) players.push(currentPlayer);
+
+  saveState();
+  renderAll();
+}
+
+function shuffleQueue() {
+  players = shuffle(players);
+  saveState();
+  renderAll();
+}
+
+function balanceWaitingQueue() {
+  players.sort((a, b) => Number(b.rating || 3) - Number(a.rating || 3));
+  saveState();
+  renderAll();
+}
+
+function clearWaitingQueue() {
+  if (!confirm("Clear all waiting players?")) return;
+  players = [];
+  saveState();
+  renderAll();
+}
+
+function shuffle(list) {
+  const copy = [...list];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function moveUp(i) {
+  if (i <= 0) return;
+  [players[i - 1], players[i]] = [players[i], players[i - 1]];
+  saveState();
+  renderAll();
+}
+
+function moveDown(i) {
+  if (i >= players.length - 1) return;
+  [players[i + 1], players[i]] = [players[i], players[i + 1]];
+  saveState();
+  renderAll();
+}
+
+function removePlayer(i) {
+  players.splice(i, 1);
+  saveState();
+  renderAll();
+}
+
+function renderAll() {
+  renderScore();
+  renderQueue();
+  renderCourts();
+  renderWinnerQueue();
+  renderRuleDescription();
+  renderWaitEstimate();
+  renderStats();
+  renderHistory();
+}
+
+function renderQueue() {
+  if (!players.length) {
+    queueList.innerHTML = `<div class="player-card">No players waiting.</div>`;
+    return;
+  }
+
+  queueList.innerHTML = players.map((p, i) => `
+    <div class="queue-item">
+      <div class="queue-photo" style="${photoStyle(p.photo)}"></div>
+      <div>
+        <div class="queue-name">${i + 1}. ${escapeHtml(p.name)}</div>
+        <div class="rating-line">${stars(p.rating)} · ${ratingLabel(p.rating)}</div>
+        <div class="meta-line">${playerWinText(p)} · Wait: ${estimateWaitForPosition(i + 1)}</div>
       </div>
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+      <div class="mini-buttons">
+        <button onclick="moveUp(${i})">▲</button>
+        <button onclick="moveDown(${i})">▼</button>
+        <button class="danger" onclick="removePlayer(${i})">Remove</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderCourts() {
+  courtList.innerHTML = courts.map((court, index) => `
+    <section class="card">
+      <div class="court-header">
+        <input value="${escapeHtml(championshipLabel(court, index))}" onchange="renameCourt('${court.id}', this.value)">
+        <div class="timer ${timerClass(court)}">${court.startedAt ? formatTime(Date.now() - court.startedAt) : "00:00"}</div>
+      </div>
+
+      <div class="court-grid">
+        <div>
+          <h3>Team 1</h3>
+          <div class="player-slots">${renderSlots(court, "teamOne")}</div>
+        </div>
+        <div class="vs">VS</div>
+        <div>
+          <h3>Team 2</h3>
+          <div class="player-slots">${renderSlots(court, "teamTwo")}</div>
+        </div>
+      </div>
+
+      <div class="court-actions">
+        <button onclick="loadNextFour('${court.id}')">Load 4</button>
+        <button class="green" onclick="finishGame('${court.id}', 'teamOne')">T1 Wins</button>
+        <button class="green" onclick="finishGame('${court.id}', 'teamTwo')">T2 Wins</button>
+        <button class="yellow" onclick="shuffleCourt('${court.id}')">Shuffle</button>
+        <button onclick="allFourOutNextFour('${court.id}')">Next 4</button>
+        <button class="danger" onclick="clearCourt('${court.id}')">Clear</button>
+      </div>
+
+      <div class="court-actions">
+        <button class="danger" onclick="removeCourt('${court.id}')">Remove Court</button>
+      </div>
+    </section>
+  `).join("");
+}
+
+function renderSlots(court, teamKey) {
+  const slots = [...court[teamKey]];
+  while (slots.length < 2) slots.push(null);
+
+  return slots.map(p => {
+    if (!p) {
+      return `<div class="player-card"><div class="player-photo"></div><div class="player-name">Empty</div></div>`;
+    }
+
+    return `
+      <div class="player-card">
+        <div class="player-photo" style="${photoStyle(p.photo)}"></div>
+        <div class="player-name">${escapeHtml(p.name)}</div>
+        <div class="rating-line">${stars(p.rating)}</div>
+        <div class="meta-line">${ratingLabel(p.rating)}</div>
+        <div class="mini-buttons">
+          <button onclick="returnCourtPlayerToQueue('${court.id}', '${teamKey}', '${p.id}')">Return</button>
+          <button onclick="replaceCourtPlayer('${court.id}', '${teamKey}', '${p.id}')">Replace</button>
+          <button class="danger" onclick="removeCourtPlayerCompletely('${court.id}', '${teamKey}', '${p.id}')">Remove</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderWinnerQueue() {
+  winnerQueueCard.classList.toggle("hidden", !(courts.length > 1 && rotationRule.value === "winnerVsWinner"));
+
+  if (!winnerTeams.length) {
+    winnerQueue.innerHTML = `<div class="player-card">No winner teams waiting.</div>`;
+    return;
+  }
+
+  winnerQueue.innerHTML = winnerTeams.map((team, i) => `
+    <div class="player-card">
+      <div class="player-name">Winner Team ${i + 1}</div>
+      <p>${team.players.map(p => escapeHtml(p.name)).join(" / ")}</p>
+    </div>
+  `).join("");
+}
+
+function renderStats() {
+  const stats = Object.values(playerStats).sort((a, b) => b.wins - a.wins);
+
+  if (!stats.length) {
+    statsList.innerHTML = `<div class="stat-card">No stats yet.</div>`;
+    return;
+  }
+
+  statsList.innerHTML = stats.map(s => `
+    <div class="stat-card">
+      <strong>${escapeHtml(s.name)} ${stars(s.rating)}</strong>
+      <p>${ratingLabel(s.rating)} · Games: ${s.games} · Wins: ${s.wins} · Losses: ${s.losses} · Win Rate: ${s.games ? Math.round((s.wins / s.games) * 100) : 0}% · Time: ${formatTime(s.timeMs)}</p>
+    </div>
+  `).join("");
+}
+
+function renderHistory() {
+  if (!courtHistory.length) {
+    historyList.innerHTML = `<div class="history-card">No court history yet.</div>`;
+    return;
+  }
+
+  historyList.innerHTML = courtHistory.map(h => `
+    <div class="history-card">
+      <strong>${escapeHtml(h.court)} · ${escapeHtml(h.time)}</strong>
+      <p>Winner: ${h.winners.map(escapeHtml).join(" / ") || "None"}</p>
+      <p>Loser: ${h.losers.map(escapeHtml).join(" / ") || "None"}</p>
+      <p>Game time: ${formatTime(h.duration)}</p>
+    </div>
+  `).join("");
+}
+
+function stars(rating) {
+  const count = Number(rating || 3);
+  return "★".repeat(count) + "☆".repeat(5 - count);
+}
+
+function ratingLabel(rating) {
+  const labels = {
+    1: "Beginner",
+    2: "Recreational",
+    3: "Intermediate",
+    4: "Advanced",
+    5: "Competitive"
+  };
+  return labels[Number(rating || 3)] || "Intermediate";
+}
+
+function playerWinText(player) {
+  const stats = playerStats[player.id];
+
+  if (!stats || !stats.games) {
+    return "No games yet";
+  }
+
+  const rate = Math.round((stats.wins / stats.games) * 100);
+  return `${rate}% win · ${stats.wins}W/${stats.losses}L`;
+}
+
+function renderWaitEstimate() {
+  const activeCourts = Math.max(courts.length, 1);
+  const avg = Number(averageGameMinutes?.value || 12);
+  const groupsAhead = Math.floor(players.length / 4);
+  const estimated = Math.ceil(groupsAhead / activeCourts) * avg;
+
+  waitEstimate.textContent = players.length
+    ? `Estimated wait for last player: about ${estimated} min · ${players.length} waiting · ${activeCourts} court(s)`
+    : `Estimated wait: No players waiting.`;
+}
+
+function estimateWaitForPosition(position) {
+  const activeCourts = Math.max(courts.length, 1);
+  const avg = Number(averageGameMinutes?.value || 12);
+  const groupNumber = Math.ceil(position / 4);
+  const minutes = Math.max(0, Math.ceil(groupNumber / activeCourts) * avg);
+  return `${minutes} min`;
+}
+
+function timerClass(court) {
+  if (!court.startedAt) return "";
+  const minutes = (Date.now() - court.startedAt) / 60000;
+  if (minutes >= 15) return "danger-time";
+  if (minutes >= 10) return "warn";
+  return "";
+}
+
+function championshipLabel(court, index) {
+  if (championshipMode?.checked && index === 0) {
+    return court.name.includes("Championship") ? court.name : "Championship Court";
+  }
+  return court.name;
+}
+
+function renameCourt(id, value) {
+  const court = courts.find(c => c.id === id);
+  if (!court) return;
+  court.name = value || "Court";
+  saveState();
+}
+
+function renderRuleDescription() {
+  const rule = rotationRule.value;
+
+  if (rule === "winnerVsWinner" && courts.length < 2) {
+    ruleDescription.textContent = "Winner vs Winner needs 2 or more courts. With 1 court, use King of Court, Winners Split, or All 4 Rotate.";
+  } else if (rule === "winnerVsWinner") {
+    ruleDescription.textContent = "Winners from each court go to the Winner Queue. Empty courts can load Winner Team vs Winner Team.";
+  } else if (rule === "split") {
+    ruleDescription.textContent = "Winning team splits. Each winner gets a new partner from the waiting stack.";
+  } else if (rule === "all") {
+    ruleDescription.textContent = "All 4 players rotate out. The next 4 players from the waiting stack play automatically.";
+  } else {
+    ruleDescription.textContent = "Winners stay. Losers go to the back. Next 2 players come in automatically.";
+  }
+}
+
+function saveSettings() {
+  saveState();
+  renderAll();
+}
+
+async function openCamera() {
+  try {
+    closeCamera();
+    cameraStream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: cameraFacing },
+      audio: false
+    });
+    cameraVideo.srcObject = cameraStream;
+    cameraPanel.classList.remove("hidden");
+  } catch {
+    alert("Camera could not open. Use Safari/Chrome and allow camera permission.");
+  }
+}
+
+function flipCamera() {
+  cameraFacing = cameraFacing === "user" ? "environment" : "user";
+  openCamera();
+}
+
+function capturePhoto() {
+  cameraCanvas.width = cameraVideo.videoWidth;
+  cameraCanvas.height = cameraVideo.videoHeight;
+  cameraCanvas.getContext("2d").drawImage(cameraVideo, 0, 0);
+  selectedPhotoData = cameraCanvas.toDataURL("image/jpeg", 0.8);
+  showPhotoPreview(selectedPhotoData);
+  closeCamera();
+}
+
+function closeCamera() {
+  if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
+  cameraStream = null;
+  cameraPanel.classList.add("hidden");
+}
+
+function resizeImage(file, maxSize) {
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        let w = img.width, h = img.height;
+
+        if (w > h && w > maxSize) {
+          h = Math.round(h * maxSize / w);
+          w = maxSize;
+        } else if (h > maxSize) {
+          w = Math.round(w * maxSize / h);
+          h = maxSize;
+        }
+
+        canvas.width = w;
+        canvas.height = h;
+        canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL("image/jpeg", 0.8));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function showPhotoPreview(photo) {
+  photoPreview.classList.toggle("hidden", !photo);
+  photoPreview.style.backgroundImage = photo ? `url('${photo}')` : "";
+}
+
+function getServingTeam() {
+  return servingTeam === "A" ? teamA : teamB;
+}
+
+function getReceivingTeam() {
+  return servingTeam === "A" ? teamB : teamA;
+}
+
+function saveScoreHistory() {
+  saveNames();
+  scoreHistory.push({
+    teamA: {...teamA},
+    teamB: {...teamB},
+    servingTeam,
+    serverNumberValue
+  });
+  if (scoreHistory.length > 50) scoreHistory.shift();
+}
+
+function renderScore() {
+  const serving = getServingTeam();
+  const receiving = getReceivingTeam();
+
+  leftName.value = serving.name;
+  rightName.value = receiving.name;
+  leftScore.textContent = serving.score;
+  rightScore.textContent = receiving.score;
+  serverNumber.textContent = serverNumberValue;
+
+  leftName.classList.add("active-server");
+  rightName.classList.remove("active-server");
+}
+
+function saveNames() {
+  getServingTeam().name = leftName.value;
+  getReceivingTeam().name = rightName.value;
+}
+
+function addPointServing() {
+  saveScoreHistory();
+  getServingTeam().score++;
+  renderScore();
+  speakScore();
+}
+
+function addPointReceiving() {
+  saveScoreHistory();
+  getReceivingTeam().score++;
+  renderScore();
+  speakScore();
+}
+
+function secondServe() {
+  saveScoreHistory();
+  serverNumberValue = 2;
+  renderScore();
+  speak("Second serve");
+}
+
+function sideOut() {
+  saveScoreHistory();
+  servingTeam = servingTeam === "A" ? "B" : "A";
+  serverNumberValue = 1;
+  renderScore();
+  speakScore();
+}
+
+function undoScore() {
+  const prev = scoreHistory.pop();
+  if (!prev) return speak("Nothing to undo");
+
+  teamA = prev.teamA;
+  teamB = prev.teamB;
+  servingTeam = prev.servingTeam;
+  serverNumberValue = prev.serverNumberValue;
+
+  renderScore();
+  speak("Undo");
+}
+
+function resetScore() {
+  saveScoreHistory();
+  teamA.score = 0;
+  teamB.score = 0;
+  servingTeam = "A";
+  serverNumberValue = 2;
+  renderScore();
+  speak("Zero zero two");
+}
+
+function speak(text) {
+  if (!window.speechSynthesis) return alert("Speaker is not supported on this browser.");
+
+  window.speechSynthesis.cancel();
+
+  const message = new SpeechSynthesisUtterance(text);
+  message.rate = 1;
+  message.pitch = 1;
+  message.lang = "en-US";
+
+  window.speechSynthesis.speak(message);
+}
+
+function speakScore() {
+  const serving = getServingTeam();
+  const receiving = getReceivingTeam();
+  speak(`${serving.score} ${receiving.score} ${serverNumberValue}`);
+}
+
+function startVoice() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Voice recognition is not supported in this browser. Use Chrome.");
+    return;
+  }
+
+  if (voiceRunning) {
+    recognition.stop();
+    return;
+  }
+
+  recognition = new SpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = false;
+  recognition.lang = "en-US";
+
+  recognition.onstart = () => {
+    voiceRunning = true;
+    voiceStatus.textContent = "Listening";
+    lastCommand.textContent = "Listening...";
+  };
+
+  recognition.onresult = event => {
+    const result = event.results[event.results.length - 1];
+    const command = result[0].transcript;
+    handleVoiceCommand(command);
+  };
+
+  recognition.onerror = event => {
+    voiceStatus.textContent = "Error";
+    lastCommand.textContent = event.error;
+  };
+
+  recognition.onend = () => {
+    voiceRunning = false;
+    voiceStatus.textContent = "Stopped";
+  };
+
+  recognition.start();
+}
+
+function handleVoiceCommand(command) {
+  const text = String(command || "").toLowerCase();
+  lastCommand.textContent = `Heard: "${text}"`;
+
+  if (text.includes("point")) return addPointServing();
+  if (text.includes("second serve") || text.includes("serve two") || text.includes("server two")) return secondServe();
+  if (text.includes("side out") || text.includes("switch serve") || text.includes("switch server")) return sideOut();
+  if (text.includes("undo")) return undoScore();
+  if (text.includes("reset") || text.includes("new game")) return resetScore();
+  if (text.includes("speak score") || text.includes("say score") || text.includes("what is the score")) return speakScore();
+}
+
+function formatTime(ms) {
+  const total = Math.floor(ms / 1000);
+  const min = Math.floor(total / 60);
+  const sec = total % 60;
+  return `${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+}
+
+function photoStyle(photo) {
+  return photo ? `background-image:url('${photo}')` : "";
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function saveState() {
+  localStorage.setItem("pickleStackPlayers", JSON.stringify(players));
+  localStorage.setItem("pickleStackCourts", JSON.stringify(courts));
+  localStorage.setItem("pickleStackWinnerTeams", JSON.stringify(winnerTeams));
+  localStorage.setItem("pickleStackCourtHistory", JSON.stringify(courtHistory));
+  localStorage.setItem("pickleStackPlayerStats", JSON.stringify(playerStats));
+  localStorage.setItem("pickleStackRotation", rotationRule.value);
+  localStorage.setItem("pickleStackAverageGameMinutes", averageGameMinutes.value);
+  localStorage.setItem("pickleStackChampionshipMode", championshipMode.checked ? "1" : "0");
+}
+
+function loadState() {
+  try {
+    players = JSON.parse(localStorage.getItem("pickleStackPlayers") || "[]");
+    courts = JSON.parse(localStorage.getItem("pickleStackCourts") || "[]");
+    winnerTeams = JSON.parse(localStorage.getItem("pickleStackWinnerTeams") || "[]");
+    courtHistory = JSON.parse(localStorage.getItem("pickleStackCourtHistory") || "[]");
+    playerStats = JSON.parse(localStorage.getItem("pickleStackPlayerStats") || "{}");
+
+    setTimeout(() => {
+      const savedRule = localStorage.getItem("pickleStackRotation");
+      const savedAvg = localStorage.getItem("pickleStackAverageGameMinutes");
+      const savedChamp = localStorage.getItem("pickleStackChampionshipMode");
+
+      if (savedRule) rotationRule.value = savedRule;
+      if (savedAvg) averageGameMinutes.value = savedAvg;
+      if (savedChamp) championshipMode.checked = savedChamp === "1";
+
+      renderRuleDescription();
+    }, 0);
+  } catch {
+    players = [];
+    courts = [];
+    winnerTeams = [];
+    courtHistory = [];
+    playerStats = {};
+  }
+}
+
+function resetAll() {
+  if (!confirm("Reset everything?")) return;
+
+  players = [];
+  courts = [makeCourt("Court 1")];
+  winnerTeams = [];
+  courtHistory = [];
+  playerStats = {};
+
+  saveState();
+  renderAll();
+}
+</script>
+</body>
 </html>
