@@ -1,121 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/969167eea6.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Services | Niño Anthony Vitualla</title>
+  <meta name="description" content="Email marketing, lead generation, VA, social media, graphic design, web support, e-commerce and AI-assisted services by Niño Anthony Vitualla.">
+  <meta name="theme-color" content="#08111f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/969167eea6.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="background">
-        <header class="header">
-            <div class="fullname-container">
-              <div ><a href="index.html" class="fullname">Niño Anthony Vitualla</a> </div>
-            </div>
-    
-            <div class="header-2 sticky-top">
-                <nav class="navbar">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="resume.html">Resume</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div> 
-            
-            <nav class="navbar navbar-dark fixed-top navbar-hide">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#"></a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="resume.html">Resume</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="services.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-        </header>
-
-         <!-- SERVICES CONTENT  -->
-        <div class="black-bar">
-            <div class="card-container">
-                <div class="container-title">
-                    <div class="title">
-                        SERVICES
-                    </div>
-                    <div class="line"></div>
-                </div>
-                <div class="title-2">
-                    MY SERVICES
-                </div>
-                <div class="service-container">
-                    <div class=" service-left"><i class="fa-brands fa-wordpress fa-3x"></i><br>
-                        Build website using page builder
-                    </div>
-                    <div class="service-mid"><i class="fa-brands fa-wordpress fa-3x"></i><br>
-                        On Page SEO
-                    </div>
-                    <div class="service-right"><i class="fa-brands fa-wix fa-3x"></i><br>
-                        Extend Website Functionality
-                    </div>
-                    <div class="service-left"><i class="fa-brands fa-wordpress fa-3x"></i><br>
-                        Website Maintenance
-                    </div>
-                    <div class="service-mid"><i class="fa-sharp fa-solid fa-newspaper fa-3x"></i><br>
-                        Newsletter Template
-                    </div>
-                    <div class="service-right"><i class="fa-solid fa-paintbrush fa-3x"></i><br>
-                        Photoshop service
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
+<body data-page="services">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">NV</span><span>Niño Anthony Vitualla</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="about.html" data-page="about">About</a>
+      <a href="resume.html" data-page="resume">Resume</a>
+      <a href="services.html" data-page="services">Services</a>
+      <a href="portfolio.html" data-page="portfolio">Portfolio</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header><main>
+<section class="page-hero section-shell"><span class="eyebrow">Services</span><h1>Flexible support for <span class="accent">growth-focused teams.</span></h1><p>Hire me for a focused specialty or use my cross-functional range to keep work moving across marketing, creative, web and operations.</p></section>
+<section class="section section-shell"><div class="service-grid">
+  <article class="service-card reveal"><div class="service-icon"><i class="fa-regular fa-envelope"></i></div><h3>Email Marketing & Cold Outreach</h3><p>Campaign setup, sequencing, lead lists, personalization, deliverability support, verification and performance tracking.</p><ul><li>Smartlead / Instantly campaigns</li><li>Prospect research & segmentation</li><li>Email verification & list hygiene</li></ul></article>
+  <article class="service-card reveal delay-1"><div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Lead Generation & CRM Support</h3><p>Build clean, useful prospect data and keep outreach pipelines organized for sales and marketing teams.</p><ul><li>Apollo research</li><li>List building & enrichment</li><li>CRM and spreadsheet organization</li></ul></article>
+  <article class="service-card reveal delay-2"><div class="service-icon"><i class="fa-solid fa-hashtag"></i></div><h3>Social Media & Content Support</h3><p>Support content workflows from planning and asset preparation to posting, organization and platform administration.</p><ul><li>Content scheduling</li><li>Captions & asset preparation</li><li>Social account support</li></ul></article>
+  <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div><h3>Graphic Design</h3><p>Practical visual design for digital campaigns, social content, presentations, marketing collateral and brand communication.</p><ul><li>Canva graphics</li><li>Social & campaign assets</li><li>Presentation / layout support</li></ul></article>
+  <article class="service-card reveal delay-1"><div class="service-icon"><i class="fa-solid fa-globe"></i></div><h3>Web Support & Website Management</h3><p>Build, update, maintain and QA websites and landing pages without overcomplicating the process.</p><ul><li>WordPress & HTML/CSS</li><li>Landing pages & website updates</li><li>Maintenance & content changes</li></ul></article>
+  <article class="service-card reveal delay-2"><div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-commerce Support</h3><p>Product, content and operational support for online stores and digital storefront workflows.</p><ul><li>Shopify support</li><li>Product/content updates</li><li>General e-commerce administration</li></ul></article>
+  <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>AI, No-Code & Vibe Coding</h3><p>Use AI-assisted tools to prototype, improve and maintain practical digital workflows and lightweight applications.</p><ul><li>Rapid app prototyping</li><li>AI-assisted coding</li><li>Workflow and UX iteration</li></ul></article>
+  <article class="service-card reveal delay-1"><div class="service-icon"><i class="fa-solid fa-list-check"></i></div><h3>Virtual Assistance & Operations</h3><p>Reliable remote support for recurring admin, research, documentation, communication and coordination tasks.</p><ul><li>Research & data entry</li><li>Email/calendar administration</li><li>Process and task coordination</li></ul></article>
+</div></section>
+<section class="section section-shell cta-section reveal"><div><span class="kicker">Not sure which service fits?</span><h2>Tell me the outcome you need.</h2><p>I can help turn it into a clear, workable scope.</p></div><a class="btn primary" href="contact.html">Discuss a project</a></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark">NV</span><span>Niño Anthony Vitualla</span></a>
+      <p>Digital growth, creative execution, web support and AI-assisted product building — from Cebu City to remote teams worldwide.</p>
     </div>
-    <footer>
-      <div class="fullname">
-      <p>Niño Anthony Vitualla</p>
-      <div class="soc-media-icon footer-soc">
-        <a href="https://www.facebook.com/skionin123/">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/miethonydesign/">
-            <i class="fa-brands fa-square-instagram"></i>
-        </a>
-    </div> 
-      
-      </div>
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-</html>
+    <div class="footer-links">
+      <strong>Explore</strong>
+      <a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Work</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <strong>Connect</strong>
+      <a href="mailto:ninoanthony.vitualla@gmail.com">Email</a>
+      <a href="https://www.facebook.com/skionin123/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/miethonydesign/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Niño Anthony Vitualla</span><span>Available for remote opportunities worldwide</span></div>
+</footer><script src="js/site.js"></script></body></html>
