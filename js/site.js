@@ -27,3 +27,12 @@ if(lightbox&&designCards.length){
   }));
   close.addEventListener('click',shut);lightbox.addEventListener('click',e=>{if(e.target===lightbox)shut()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lightbox.classList.contains('open'))shut()});
 }
+
+
+// v5: keep navigation stable across pages and viewport changes.
+window.addEventListener('resize',()=>{
+  if(window.innerWidth>760 && nav){
+    nav.classList.remove('open');
+    if(toggle){toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<i class="fa-solid fa-bars"></i>'}
+  }
+});
