@@ -13,3 +13,7 @@ Highlights:
 - Updated contact and SEO metadata
 
 Open `index.html` locally to review.
+
+## Graphic Design Gallery
+
+`design.html` adds a dedicated filterable graphic design portfolio using selected work from banners, social campaigns, logos, apparel and infographics. Click any design to open a larger preview.
